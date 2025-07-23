@@ -21,14 +21,20 @@
         }
 
 
-        .bild-ecke {
+        .bilder-ecke {
               position: fixed;
               bottom: 10px;
               right: 10px;
-              width: 100px; /* Größe des Bildes anpassen */
-              height: auto;
-              z-index: 1000; /* Damit es über anderen Elementen liegt */
+              display: flex;
+              gap: 10px; /* Abstand zwischen den Bildern */
+              z-index: 1000;
             }
+
+        .bilder-ecke img {
+          width: 100px; /* Größe der Bilder */
+          height: auto;
+          border-radius: 8px; /* Optional: abgerundete Ecken */
+        }
     </style>
 </head>
 
@@ -124,8 +130,9 @@
     <button class="btn btn-secondary" onclick="exportCSV()">📤 Bewertungen exportieren</button>
 </div>
 
-<div class="bild-ecke">
-    <img class="border border-danger rounded" src="logo1.png" alt="Logo 1" style="width: 100%; height: auto;">
+<div class="bilder-ecke">
+    <img class="border border-danger" src="logo1.png" alt="Logo 1">
+    <img class="border border-secondary" src="logo2.png" alt="Logo 2">
 </div>
 
 
