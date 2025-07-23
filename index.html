@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Produktbewertung</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rating-buttons {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .rating-buttons button {
+            font-size: 4rem;
+            padding: 1rem 2rem;
+        }
+
+        .product {
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+
+        .bild-ecke {
+              position: fixed;
+              bottom: 10px;
+              right: 10px;
+              width: 100px; /* Größe des Bildes anpassen */
+              height: auto;
+              z-index: 1000; /* Damit es über anderen Elementen liegt */
+            }
+    </style>
+</head>
+
+<body class="container py-4">
+<h1 class="mb-4 text-center">Bewerte unsere neuen Produktideen!</h1>
+
+<h2 class="mb-4 text-center">Die neuen Schmelzkäse-Torten!</h2>
+
+<div class="row text-center justify-content-evenly" id="product-container-1">
+
+    <!-- Produktbilder -->
+    <div class="col-md-4 product rounded" data-product="product1">
+        <h5>Schmelzkäse-Torte Kräuter</h5>
+        <img src="product1.jpg" class="img-fluid rounded" alt="Produkt 1">
+        <div class="rating-buttons text-center mt-2">
+            <button class="btn btn-outline-success me-2" onclick="rate('product1', 'up')">👍</button>
+            <button class="btn btn-outline-danger" onclick="rate('product1', 'down')">👎</button>
+        </div>
+    </div>
+
+    <div class="col-md-4 product rounded" data-product="product2">
+        <h5>Schmelzkäse-Torte Salami</h5>
+        <img src="product2.jpg" class="img-fluid rounded" alt="Produkt 2">
+        <div class="rating-buttons text-center mt-2">
+            <button class="btn btn-outline-success me-2" onclick="rate('product2', 'up')">👍</button>
+            <button class="btn btn-outline-danger" onclick="rate('product2', 'down')">👎</button>
+        </div>
+    </div>
+
+    <div class="col-md-4 product rounded" data-product="product3">
+        <h5>Schmelzkäse-Torte Bruscetta</h5>
+        <img src="product3.jpg" class="img-fluid rounded" alt="Produkt 3">
+        <div class="rating-buttons text-center mt-2">
+            <button class="btn btn-outline-success me-2" onclick="rate('product3', 'up')">👍</button>
+            <button class="btn btn-outline-danger" onclick="rate('product3', 'down')">👎</button>
+        </div>
+    </div>
+
+</div>
+
+<h2 class="mb-4 text-center">Die neuen veganen Aufstriche!</h2>
+
+<div class="row text-center justify-content-evenly" id="product-container">
+
+    <div class="col-md-4 product rounded" data-product="product4">
+        <h5>Natur</h5>
+        <img src="product4.jpg" class="img-fluid rounded" alt="Produkt 4">
+        <div class="rating-buttons text-center mt-2">
+            <button class="btn btn-outline-success me-2" onclick="rate('product4', 'up')">👍</button>
+            <button class="btn btn-outline-danger" onclick="rate('product4', 'down')">👎</button>
+        </div>
+    </div>
+
+    <div class="col-md-4 product rounded" data-product="product5">
+        <h5>Kräuter</h5>
+        <img src="product5.jpg" class="img-fluid rounded" alt="Produkt 5">
+        <div class="rating-buttons text-center mt-2">
+            <button class="btn btn-outline-success me-2" onclick="rate('product5', 'up')">👍</button>
+            <button class="btn btn-outline-danger" onclick="rate('product5', 'down')">👎</button>
+        </div>
+    </div>
+
+    <div class="col-md-4 product rounded" data-product="product6">
+        <h5>Meerrettich</h5>
+        <img src="product6.jpg" class="img-fluid rounded" alt="Produkt 6">
+        <div class="rating-buttons text-center mt-2">
+            <button class="btn btn-outline-success me-2" onclick="rate('product6', 'up')">👍</button>
+            <button class="btn btn-outline-danger" onclick="rate('product6', 'down')">👎</button>
+        </div>
+    </div>
+
+    <div class="col-md-4 product rounded" data-product="product7">
+        <h5>Rote-Bete-Meerrettich</h5>
+        <img src="product7.jpg" class="img-fluid rounded" alt="Produkt 7">
+        <div class="rating-buttons text-center mt-2">
+            <button class="btn btn-outline-success me-2" onclick="rate('product7', 'up')">👍</button>
+            <button class="btn btn-outline-danger" onclick="rate('product7', 'down')">👎</button>
+        </div>
+    </div>
+
+    <div class="col-md-4 product rounded" data-product="product8">
+        <h5>Tomate-Olive</h5>
+        <img src="product8.jpg" class="img-fluid rounded" alt="Produkt 8">
+        <div class="rating-buttons text-center mt-2">
+            <button class="btn btn-outline-success me-2" onclick="rate('product8', 'up')">👍</button>
+            <button class="btn btn-outline-danger" onclick="rate('product8', 'down')">👎</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center mt-4">
+    <button class="btn btn-secondary" onclick="exportCSV()">📤 Bewertungen exportieren</button>
+</div>
+
+<div class="bild-ecke">
+    <img class="border border-danger rounded" src="logo1.png" alt="Logo 1" style="width: 100%; height: auto;">
+</div>
+
+
+<script>
+    const products = document.querySelectorAll('.product');
+
+    products.forEach(product => {
+        product.addEventListener('click', function(e) {
+            if (e.target.tagName === 'BUTTON') return;
+            const current = this.querySelector('.rating-buttons');
+            const isVisible = current.style.display === 'block';
+            document.querySelectorAll('.rating-buttons').forEach(rb => rb.style.display = 'none');
+            current.style.display = isVisible ? 'none' : 'block';
+        });
+    });
+
+    function rate(productId, type) {
+        const key = 'rating_' + productId;
+        let data = JSON.parse(localStorage.getItem(key)) || { up: 0, down: 0 };
+        if (type === 'up') data.up++;
+        else data.down++;
+        localStorage.setItem(key, JSON.stringify(data));
+        document.querySelectorAll('.rating-buttons').forEach(rb => rb.style.display = 'none');
+    }
+
+    function exportCSV() {
+        const headers = ['Produkt-ID', 'Daumen hoch', 'Daumen runter'];
+        const rows = [headers];
+        for (let i = 1; i <= 8; i++) {
+            const key = 'rating_product' + i;
+            const data = JSON.parse(localStorage.getItem(key)) || { up: 0, down: 0 };
+            rows.push(['product' + i, data.up, data.down]);
+        }
+        const csvContent = rows.map(e => e.join(',')).join('\n');
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('download', 'bewertungen.csv');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
+</body>
+</html>
