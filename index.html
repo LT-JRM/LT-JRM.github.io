@@ -1,215 +1,303 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Produktbewertung</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .rating-buttons {
-            display: none;
-            margin-top: 10px;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Features mit Hover & Modals</title>
 
-        .rating-buttons button {
-            font-size: 4rem;
-            padding: 1rem 2rem;
-        }
+  <!-- Bootstrap CSS (korrekt eingebunden) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
 
-        .product {
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
+  <style>
+    :root {
+      --clr-gray: #9aa0a6;
+      --clr-creme: #f5f0e6;
+      --clr-gold: #d4af37;
+    }
 
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--clr-gray) 0%, var(--clr-creme) 50%, var(--clr-gold) 100%);
+      background-attachment: fixed;
+    }
 
-        .bilder-ecke {
-              position: fixed;
-              bottom: 10px;
-              right: 10px;
-              display: flex;
-              gap: 10px; /* Abstand zwischen den Bildern */
-              z-index: 1000;
-            }
+    /* -------- Glaskasten um alles -------- */
+    .glass-wrapper {
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 1.5rem;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
 
-        .bilder-ecke img {
-          width: 100px; /* Größe der Bilder */
-          height: auto;
-          border-radius: 8px; /* Optional: abgerundete Ecken */
-        }
-    </style>
+    /* -------- Karten (unverändert lassen) -------- */
+    .feature-card {
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #fff;
+    }
+    .feature-card:hover,
+    .feature-card:focus-within {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.08);
+      border-color: rgba(13, 110, 253, 0.25);
+    }
+    .feature-icon {
+      width: 3rem; height: 3rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: .75rem;
+      background: rgba(13,110,253,.1);
+      color: #0d6efd;
+    }
+
+    .modal-xl { --bs-modal-width: min(1000px, 95vw); }
+  </style>
 </head>
+<body>
 
-<body class="container py-4">
-<h1 class="mb-4 text-center">Bewerte unsere neuen Produktideen!</h1>
+  <div class="container">
+    <!-- Glaskasten um Header + Grid + Tipp -->
+    <div class="glass-wrapper">
 
-<h2 class="mb-4 text-center">Die neuen Schmelzkäse-Würfel!</h2>
+      <!-- Header -->
+      <header class="text-center mb-5">
+        <h1 class="display-5 fw-bold">Fortgeschrittene KI-Schulung</h1>
+        <p class="lead mt-3">
+          Bewege die Maus über die Kästen. Klicke auf einen Kasten, um Details im Popup zu sehen.
+        </p>
+      </header>
 
-<div class="row text-center justify-content-evenly" id="product-container-1">
+      <!-- Karten-Grid -->
+      <main class="container py-2">
+        <div class="row g-4">
 
-    <!-- Produktbilder -->
-    <div class="col-md-4 product rounded" data-product="product1">
-        <h5>Schmelzkäse-Würfel Trüffel</h5>
-        <img src="product1.jpg" class="img-fluid rounded" alt="Produkt 1">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product1', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product1', 'down')">👎</button>
+          <!-- Karte 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="feature-card h-100 p-4"
+              role="button"
+              tabindex="0"
+              aria-label="Analytics öffnen"
+              data-bs-toggle="modal"
+              data-bs-target="#modalFeature1">
+
+              <div class="d-flex align-items-start gap-3">
+                <div class="feature-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                       class="bi bi-graph-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M0 0h1v15h15v1H0V0Zm14 10.5V6h-4.5l1.646 1.646-3.182 3.182-2.5-2.5L2 11.793l.707.707 3.257-3.257 2.5 2.5 3.889-3.889L14 10.5Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Analytics &amp; Insights</h2>
+                  <p class="mb-0 text-secondary">Dashboards, KPIs und datengetriebene Entscheidungen.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="feature-card h-100 p-4"
+              role="button"
+              tabindex="0"
+              aria-label="Automatisierung öffnen"
+              data-bs-toggle="modal"
+              data-bs-target="#modalFeature2">
+
+              <div class="d-flex align-items-start gap-3">
+                <div class="feature-icon" style="background: rgba(25,135,84,.1); color:#198754;" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                    <path d="M9.796 1.343c-.527-1.02-2.065-1.02-2.592 0l-.094.183a1.873 1.873 0 0 1-2.163.911l-.2-.066c-1.12-.37-2.217.728-1.846 1.846l.066.2c.3.907-.1 1.908-.912 2.163l-.183.094c-1.02.527-1.02 2.065 0 2.592l.183.094c.812.255 1.211 1.256.912 2.163l-.066.2c-.37 1.12.727 2.217 1.846 1.846l.2-.066c.907-.3 1.908.1 2.163.912l.094.183c.527 1.02 2.065 1.02 2.592 0l.094-.183a1.873 1.873 0 0 1 2.163-.912l.2.066c1.12.37 2.217-.727 1.846-1.846l-.066-.2a1.873 1.873 0 0 1 .912-2.163l.183-.094c1.02-.527 1.02-2.065 0-2.592l-.183-.094a1.873 1.873 0 0 1-.912-2.163l.066-.2c.37-1.12-.727-2.217-1.846-1.846l-.2.066a1.873 1.873 0 0 1-2.163-.912z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Automatisierung</h2>
+                  <p class="mb-0 text-secondary">Workflows beschleunigen und Fehler minimieren.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="feature-card h-100 p-4"
+              role="button"
+              tabindex="0"
+              aria-label="Sicherheit öffnen"
+              data-bs-toggle="modal"
+              data-bs-target="#modalFeature3">
+
+              <div class="d-flex align-items-start gap-3">
+                <div class="feature-icon" style="background: rgba(220,53,69,.1); color:#dc3545;" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                    <path d="M5.5 9a1.5 1.5 0 1 1 2-1.415V7a1 1 0 1 1 1 0v.585A1.5 1.5 0 1 1 5.5 9"/>
+                    <path d="M5.071 1.2A1 1 0 0 0 4 2.118V5c0 4.018 2.686 6.932 3.637 7.78a1 1 0 0 0 1.326 0C9.914 12.07 12.6 9.156 12.6 5V2.118A1 1 0 0 0 11.529 1.2l-3.2-1.143a1 1 0 0 0-.658 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Sicherheit</h2>
+                  <p class="mb-0 text-secondary">Standards, Verschlüsselung und Zugriffskontrollen.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
         </div>
-    </div>
 
-    <div class="col-md-4 product rounded" data-product="product2">
-        <h5>Schmelzkäse-Würfel Pesto</h5>
-        <img src="product2.jpg" class="img-fluid rounded" alt="Produkt 2">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product2', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product2', 'down')">👎</button>
+        <p class="text-center text-secondary mt-4 mb-0">
+          Tipp: Du kannst auch mit der Tastatur (Tab + Enter) eine Karte öffnen. ✔️
+        </p>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Modals (Bootstrap-Standardfarben) -->
+  <!-- Modal 1 -->
+  <div class="modal fade" id="modalFeature1" tabindex="-1" aria-labelledby="modalFeature1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature1Label">Analytics &amp; Insights</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
         </div>
-    </div>
-
-    <div class="col-md-4 product rounded" data-product="product3">
-        <h5>Schmelzkäse-Würfel Smoked Chili</h5>
-        <img src="product3.jpg" class="img-fluid rounded" alt="Produkt 3">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product3', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product3', 'down')">👎</button>
+        <div class="modal-body">
+          <p class="mb-3">
+            Mit unseren Analytics-Lösungen gewinnst du einen klaren Überblick über deine wichtigsten KPIs.
+            Interaktive Dashboards, Drill-Downs und Filter helfen, Trends zu erkennen.
+          </p>
+          <ul>
+            <li>Echtzeit-Reporting &amp; KPI-Tracking</li>
+            <li>Forecasting und Anomalie-Erkennung</li>
+            <li>Export in PDF/CSV und Teamfreigaben</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary">Pro-Tipp: Verknüpfe mehrere Datenquellen, um Silos aufzubrechen.</p>
         </div>
-    </div>
-
-</div>
-
-<h2 class="mb-4 text-center">Die neuen Schmelzkäse-Torten!</h2>
-
-<div class="row text-center justify-content-evenly" id="product-container-2">
-
-    <!-- Produktbilder -->
-    <div class="col-md-4 product rounded" data-product="product4">
-        <h5>Schmelzkäse-Torte Kräuter</h5>
-        <img src="product4.jpg" class="img-fluid rounded" alt="Produkt 4">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product4', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product4', 'down')">👎</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Schließen</button>
+          <button type="button" class="btn btn-primary">Mehr erfahren</button>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="col-md-4 product rounded" data-product="product5">
-        <h5>Schmelzkäse-Torte Salami</h5>
-        <img src="product5.jpg" class="img-fluid rounded" alt="Produkt 5">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product5', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product5', 'down')">👎</button>
+  <!-- Modal 2 -->
+  <div class="modal fade" id="modalFeature2" tabindex="-1" aria-labelledby="modalFeature2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature2Label">Automatisierung</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
         </div>
-    </div>
-
-    <div class="col-md-4 product rounded" data-product="product6">
-        <h5>Schmelzkäse-Torte Bruscetta</h5>
-        <img src="product6.jpg" class="img-fluid rounded" alt="Produkt 6">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product6', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product6', 'down')">👎</button>
+        <div class="modal-body">
+          <p class="mb-3">
+            Reduziere manuelle Prozesse und beschleunige Abläufe durch smarte Workflows.
+          </p>
+          <ol>
+            <li>Trigger-basierte Jobs (Zeitpläne, Events, Webhooks)</li>
+            <li>No-/Low-Code-Builder für schnelle Anpassungen</li>
+            <li>Versionierung, Logs und Benachrichtigungen</li>
+          </ol>
+          <div class="alert alert-success" role="alert">
+            <strong>Erfolg:</strong> 35% Zeitersparnis in der Auftragsabwicklung.
+          </div>
         </div>
-    </div>
-
-</div>
-
-<h2 class="mb-4 text-center">Die neuen veganen Aufstriche!</h2>
-
-<div class="row text-center justify-content-evenly" id="product-container-3">
-
-    <div class="col-md-4 product rounded" data-product="product7">
-        <h5>Natur</h5>
-        <img src="product7.jpg" class="img-fluid rounded" alt="Produkt 7">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product7', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product7', 'down')">👎</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Schließen</button>
+          <button type="button" class="btn btn-primary">Workflow anlegen</button>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="col-md-4 product rounded" data-product="product8">
-        <h5>Kräuter</h5>
-        <img src="product8.jpg" class="img-fluid rounded" alt="Produkt 8">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product8', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product8', 'down')">👎</button>
+  <!-- Modal 3 -->
+  <div class="modal fade" id="modalFeature3" tabindex="-1" aria-labelledby="modalFeature3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature3Label">Sicherheit</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
         </div>
-    </div>
-
-    <div class="col-md-4 product rounded" data-product="product9">
-        <h5>Meerrettich</h5>
-        <img src="product9.jpg" class="img-fluid rounded" alt="Produkt 9">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product9', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product9', 'down')">👎</button>
+        <div class="modal-body">
+          <p class="mb-3">
+            Sicherheit von der Verschlüsselung bis zur Zugriffskontrolle.
+          </p>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h6">Best Practices</h3>
+                  <ul class="mb-0">
+                    <li>2FA/MFA &amp; SSO-Integration</li>
+                    <li>Rollenbasierte Berechtigungen (RBAC)</li>
+                    <li>Audit-Logs &amp; Compliance-Reports</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h6">Technik</h3>
+                  <ul class="mb-0">
+                    <li>Verschlüsselung in Ruhe &amp; in Transit</li>
+                    <li>Regelmäßige Penetrationstests</li>
+                    <li>Isolierte Umgebungen &amp; Backups</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <p class="text-secondary mb-0">
+            Konform mit gängigen Standards (z. B. ISO 27001, OWASP-Praktiken – je nach Implementierung).
+          </p>
         </div>
-    </div>
-
-    <div class="col-md-4 product rounded" data-product="product10">
-        <h5>Rote-Bete-Meerrettich</h5>
-        <img src="product10.jpg" class="img-fluid rounded" alt="Produkt 10">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product10', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product10', 'down')">👎</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Schließen</button>
+          <button type="button" class="btn btn-primary">Sicherheitsrichtlinien</button>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="col-md-4 product rounded" data-product="product11">
-        <h5>Tomate-Olive</h5>
-        <img src="product11.jpg" class="img-fluid rounded" alt="Produkt 11">
-        <div class="rating-buttons text-center mt-2">
-            <button class="btn btn-outline-success me-2" onclick="rate('product11', 'up')">👍</button>
-            <button class="btn btn-outline-danger" onclick="rate('product11', 'down')">👎</button>
-        </div>
-    </div>
+  <!-- Bootstrap Bundle JS (korrekt eingebunden) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
 
-</div>
-
-<div class="text-center mt-4">
-    <button class="btn btn-secondary" onclick="exportCSV()">📤 Bewertungen exportieren</button>
-</div>
-
-<div class="bilder-ecke">
-    <img class="border border-danger" src="logo1.png" alt="Logo 1">
-    <img class="border border-success-subtle" src="logo2.png" alt="Logo 2">
-</div>
-
-
-<script>
-    const products = document.querySelectorAll('.product');
-
-    products.forEach(product => {
-        product.addEventListener('click', function(e) {
-            if (e.target.tagName === 'BUTTON') return;
-            const current = this.querySelector('.rating-buttons');
-            const isVisible = current.style.display === 'block';
-            document.querySelectorAll('.rating-buttons').forEach(rb => rb.style.display = 'none');
-            current.style.display = isVisible ? 'none' : 'block';
-        });
-    });
-
-    function rate(productId, type) {
-        const key = 'rating_' + productId;
-        let data = JSON.parse(localStorage.getItem(key)) || { up: 0, down: 0 };
-        if (type === 'up') data.up++;
-        else data.down++;
-        localStorage.setItem(key, JSON.stringify(data));
-        document.querySelectorAll('.rating-buttons').forEach(rb => rb.style.display = 'none');
-    }
-
-    function exportCSV() {
-        const headers = ['Produkt-ID', 'Daumen hoch', 'Daumen runter'];
-        const rows = [headers];
-        for (let i = 1; i <= 11; i++) {
-            const key = 'rating_product' + i;
-            const data = JSON.parse(localStorage.getItem(key)) || { up: 0, down: 0 };
-            rows.push(['product' + i, data.up, data.down]);
+  <!-- Tastatur: Enter/Space öffnet Modal bei Fokus auf Karte (fix) -->
+  <script>
+    document.querySelectorAll('.feature-card').forEach((card) => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const target = card.getAttribute('data-bs-target');
+          if (!target) return;
+          const modalEl = document.querySelector(target);
+          if (!modalEl) return;
+          const modal = new bootstrap.Modal(modalEl, { keyboard: true });
+          modal.show();
         }
-        const csvContent = rows.map(e => e.join(',')).join('\n');
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.setAttribute('href', url);
-        link.setAttribute('download', 'bewertungen.csv');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-</script>
+      });
+    });
+  </script>
 </body>
 </html>
+``
