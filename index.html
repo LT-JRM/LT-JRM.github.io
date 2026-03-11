@@ -15,14 +15,14 @@
 
   <style>
     :root {
-      --clr-gray: #9aa0a6;
+      --clr-gray: #7e8182;
       --clr-creme: #f5f0e6;
-      --clr-gold: #d4af37;
+      --clr-gold: #d8000d;
     }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, var(--clr-gray) 0%, var(--clr-creme) 50%, var(--clr-gold) 100%);
+      background: linear-gradient(120deg, var(--clr-gray) 10%, var(--clr-creme) 55%, var(--clr-gold) 100%);
       background-attachment: fixed;
     }
 
@@ -54,14 +54,26 @@
       border-color: rgba(13, 110, 253, 0.25);
     }
     .feature-icon {
-      width: 3rem; height: 3rem;
+      width: 5rem; height: 3.7rem;
       display: inline-flex; align-items: center; justify-content: center;
       border-radius: .75rem;
       background: rgba(13,110,253,.1);
       color: #0d6efd;
     }
 
-    .modal-xl { --bs-modal-width: min(1000px, 95vw); }
+    .modal-header {
+      align-items: center;
+      justify-content: center;
+    }
+
+    li.not_sure {
+      color: grey;
+    }
+
+    .modal-xl {
+      --bs-modal-width: min(1000px, 95vw);
+      --bs-modal-border-radius: 1rem;
+     }
   </style>
 </head>
 <body>
@@ -74,34 +86,40 @@
       <header class="text-center mb-5">
         <h1 class="display-5 fw-bold">Fortgeschrittene KI-Schulung</h1>
         <p class="lead mt-3">
-          Bewege die Maus über die Kästen. Klicke auf einen Kasten, um Details im Popup zu sehen.
+          Um den verantwortungsvollen und effizienten Einsatz von KI im Unternehmen zu fördern, werden nachfolgend
+          ausgewählte Schulungs- und Weiterbildungsangebote vorgestellt. Sie sollen Mitarbeitende dabei unterstützen,
+          KI-Kompetenzen aufzubauen und eine sichere, produktive Nutzung im Arbeitsalltag zu ermöglichen.
+
+        </p>
+        <p class="lead mt-3">
+          Die im Folgenden dargestellten Inhalte und Empfehlungen beruhen ausschließlich auf eigens
+          entwickelten Vorschlägen und dienen als erste Orientierung sowie Diskussionsgrundlage.
+
         </p>
       </header>
 
       <!-- Karten-Grid -->
-      <main class="container py-2">
-        <div class="row g-4">
+      <main class="container py-3">
+        <div class="row g-3 mb-3">
 
           <!-- Karte 1 -->
           <div class="col-12 col-md-6 col-lg-4">
             <article class="feature-card h-100 p-4"
               role="button"
               tabindex="0"
-              aria-label="Analytics öffnen"
+              aria-label="KI-Inhalte Erkennen öffnen"
               data-bs-toggle="modal"
               data-bs-target="#modalFeature1">
 
-              <div class="d-flex align-items-start gap-3">
-                <div class="feature-icon" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                       class="bi bi-graph-up" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                          d="M0 0h1v15h15v1H0V0Zm14 10.5V6h-4.5l1.646 1.646-3.182 3.182-2.5-2.5L2 11.793l.707.707 3.257-3.257 2.5 2.5 3.889-3.889L14 10.5Z"/>
-                  </svg>
+              <div class="d-flex align-items-center gap-3">
+                <div class="feature-icon" aria-hidden="true" style="background: #FEEAFF; padding: 0;">
+                  <img src="img/binoculars.svg" alt="Fernglas" style="width: 40px; height: 40px;">
                 </div>
                 <div>
-                  <h2 class="h5 mb-1">Analytics &amp; Insights</h2>
-                  <p class="mb-0 text-secondary">Dashboards, KPIs und datengetriebene Entscheidungen.</p>
+                  <h2 class="h5 mb-1">KI-Inhalte Erkennen</h2>
+                  <p class="mb-0 text-secondary">Erkennung von KI-Inhalten - Schutz vor Täuschung und
+                    Betrug.
+                  </p>
                 </div>
               </div>
             </article>
@@ -112,20 +130,18 @@
             <article class="feature-card h-100 p-4"
               role="button"
               tabindex="0"
-              aria-label="Automatisierung öffnen"
+              aria-label="KI-Kreativ-Workshop öffnen"
               data-bs-toggle="modal"
               data-bs-target="#modalFeature2">
 
-              <div class="d-flex align-items-start gap-3">
-                <div class="feature-icon" style="background: rgba(25,135,84,.1); color:#198754;" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
-                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
-                    <path d="M9.796 1.343c-.527-1.02-2.065-1.02-2.592 0l-.094.183a1.873 1.873 0 0 1-2.163.911l-.2-.066c-1.12-.37-2.217.728-1.846 1.846l.066.2c.3.907-.1 1.908-.912 2.163l-.183.094c-1.02.527-1.02 2.065 0 2.592l.183.094c.812.255 1.211 1.256.912 2.163l-.066.2c-.37 1.12.727 2.217 1.846 1.846l.2-.066c.907-.3 1.908.1 2.163.912l.094.183c.527 1.02 2.065 1.02 2.592 0l.094-.183a1.873 1.873 0 0 1 2.163-.912l.2.066c1.12.37 2.217-.727 1.846-1.846l-.066-.2a1.873 1.873 0 0 1 .912-2.163l.183-.094c1.02-.527 1.02-2.065 0-2.592l-.183-.094a1.873 1.873 0 0 1-.912-2.163l.066-.2c.37-1.12-.727-2.217-1.846-1.846l-.2.066a1.873 1.873 0 0 1-2.163-.912z"/>
-                  </svg>
+              <div class="d-flex align-items-center gap-3">
+                <div class="feature-icon" aria-hidden="true" style="background: #DEFACB; padding: 0;">
+                  <img src="img/light_bulb.svg" alt="Fernglas" style="width: 50px; height: 50px;">
                 </div>
                 <div>
-                  <h2 class="h5 mb-1">Automatisierung</h2>
-                  <p class="mb-0 text-secondary">Workflows beschleunigen und Fehler minimieren.</p>
+                  <h2 class="h5 mb-1">KI-Kreativ-Workshop</h2>
+                  <p class="mb-0 text-secondary">Mit KI Kreativität steigern - Ideenentwicklung
+                    ankurbeln.</p>
                 </div>
               </div>
             </article>
@@ -136,20 +152,39 @@
             <article class="feature-card h-100 p-4"
               role="button"
               tabindex="0"
-              aria-label="Sicherheit öffnen"
+              aria-label="KI-Agent-Workshop öffnen"
               data-bs-toggle="modal"
               data-bs-target="#modalFeature3">
 
-              <div class="d-flex align-items-start gap-3">
-                <div class="feature-icon" style="background: rgba(220,53,69,.1); color:#dc3545;" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
-                    <path d="M5.5 9a1.5 1.5 0 1 1 2-1.415V7a1 1 0 1 1 1 0v.585A1.5 1.5 0 1 1 5.5 9"/>
-                    <path d="M5.071 1.2A1 1 0 0 0 4 2.118V5c0 4.018 2.686 6.932 3.637 7.78a1 1 0 0 0 1.326 0C9.914 12.07 12.6 9.156 12.6 5V2.118A1 1 0 0 0 11.529 1.2l-3.2-1.143a1 1 0 0 0-.658 0z"/>
-                  </svg>
+              <div class="d-flex align-items-center gap-3">
+                <div class="feature-icon" aria-hidden="true" style="background: #E9F6FF; padding: 0;">
+                  <img src="img/ai_agent.svg" alt="Fernglas" style="width: 50px; height: 50px;">
                 </div>
                 <div>
-                  <h2 class="h5 mb-1">Sicherheit</h2>
-                  <p class="mb-0 text-secondary">Standards, Verschlüsselung und Zugriffskontrollen.</p>
+                  <h2 class="h5 mb-1">KI-Agent-Workshop</h2>
+                  <p class="mb-0 text-secondary">Einführung in Aufbau und Einsatz von KI‑Agenten.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Karte Coming Soon -->
+        <div class="row g-3">
+
+          <div>
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Coming soon öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeatureComingSoon">
+
+              <div class="d-flex align-items-center justify-content-center gap-3">
+                <div>
+                  <h2 class="h5 mb-1">Coming soon</h2>
+                  <p class="mb-0 text-secondary" style="text-indent:11px;">Coming soon</p>
                 </div>
               </div>
             </article>
@@ -158,7 +193,7 @@
         </div>
 
         <p class="text-center text-secondary mt-4 mb-0">
-          Tipp: Du kannst auch mit der Tastatur (Tab + Enter) eine Karte öffnen. ✔️
+          Alle Rechte vorbehalten ©
         </p>
       </main>
 
@@ -171,25 +206,45 @@
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title h4" id="modalFeature1Label">Analytics &amp; Insights</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
+          <h2 class="modal-title h4" id="modalFeature1Label">KI-Inhalte Erkennen</h2>
         </div>
         <div class="modal-body">
           <p class="mb-3">
-            Mit unseren Analytics-Lösungen gewinnst du einen klaren Überblick über deine wichtigsten KPIs.
-            Interaktive Dashboards, Drill-Downs und Filter helfen, Trends zu erkennen.
+            Die Menge an Fake News und Deepfakes nimmt kontinuierlich zu. Durch die stetige Weiterentwicklung und
+            Verbesserung von KI‑Technologien im Bereich der Bild- und Videoerzeugung wirken diese Desinformationen
+            immer glaubwürdiger und verbreiten sich dank des Internets in rasantem Tempo.
+            Zudem wird KI mittlerweile verstärkt für Betrugsversuche eingesetzt – beispielsweise, um überzeugendere
+            E‑Mails zu formulieren oder am Telefon mit realistisch klingenden, künstlich erzeugten Stimmen Vertrauen
+            zu erwecken.
           </p>
+          <p class="mb-3">
+            Um solche Betrugsversuche vorzubeugen und Interessierte umfassend aufzuklären, behandelt dieses
+            Schulungsangebot die wichtigsten Erkennungsmerkmale, typische Verhaltensweisen sowie wirksame Strategien
+            zur Vermeidung entsprechender Vorfälle.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, die Teilnehmenden für KI‑basierte Betrugsversuche zu sensibilisieren und sie in
+            die Lage zu versetzen, manipulierte Inhalte zu erkennen, richtig einzuordnen und angemessen darauf zu
+            reagieren.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 10 bis 15 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 2 bis 5 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
           <ul>
-            <li>Echtzeit-Reporting &amp; KPI-Tracking</li>
-            <li>Forecasting und Anomalie-Erkennung</li>
-            <li>Export in PDF/CSV und Teamfreigaben</li>
+            <li>Umfassender theoretischer Einstieg</li>
+            <li>Praktische Vertiefung anhand von Beispielen</li>
+            <li class="not_sure">Kreative "Workshop-Runde"</li>
+            <li class="not_sure">Abschließender Test</li>
           </ul>
           <hr>
-          <p class="mb-0 text-secondary">Pro-Tipp: Verknüpfe mehrere Datenquellen, um Silos aufzubrechen.</p>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Schließen</button>
-          <button type="button" class="btn btn-primary">Mehr erfahren</button>
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
         </div>
       </div>
     </div>
@@ -200,25 +255,41 @@
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title h4" id="modalFeature2Label">Automatisierung</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
+          <h2 class="modal-title h4" id="modalFeature2Label">KI-Kreativ-Workshop</h2>
         </div>
         <div class="modal-body">
           <p class="mb-3">
-            Reduziere manuelle Prozesse und beschleunige Abläufe durch smarte Workflows.
+            KI‑Tools entwickeln sich rasant und prägen zunehmend den Arbeitsalltag. Sie unterstützen bereits heute
+            kreative Prozesse, beschleunigen die Ideenfindung und eröffnen neue Möglichkeiten, Innovationen
+            voranzutreiben. Gleichzeitig besteht in vielen Teams noch Unsicherheit im Umgang mit diesen Technologien.
           </p>
-          <ol>
-            <li>Trigger-basierte Jobs (Zeitpläne, Events, Webhooks)</li>
-            <li>No-/Low-Code-Builder für schnelle Anpassungen</li>
-            <li>Versionierung, Logs und Benachrichtigungen</li>
-          </ol>
-          <div class="alert alert-success" role="alert">
-            <strong>Erfolg:</strong> 35% Zeitersparnis in der Auftragsabwicklung.
-          </div>
+          <p class="mb-3">
+            Um Probleme künftig effizienter und kreativer lösen zu können, wird diese Schulung angeboten. Sie zeigt
+            verschiedene Wege auf, den eigenen Horizont zu erweitern, neue Perspektiven einzunehmen, die Kreativität
+            zu steigern und dadurch den Arbeitsalltag angenehmer und produktiver zu gestalten.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, die Teilnehmenden dabei zu unterstützen, mithilfe von KI ihre Kreativität zu
+            stärken, selbstständig neue Ideen zu entwickeln und Aufgaben sowie Problemstellungen effizienter zu
+            bewältigen – auch in Situationen, in denen eine Ideenblockade auftritt.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 5 bis 10 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 1,5 bis 4 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Theoretische Einführung</li>
+            <li>Workshop-Runde(-n)</li>
+            <li>Ideen-/Lösungspräsentation</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Schließen</button>
-          <button type="button" class="btn btn-primary">Workflow anlegen</button>
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
         </div>
       </div>
     </div>
@@ -229,48 +300,57 @@
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title h4" id="modalFeature3Label">Sicherheit</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
+          <h2 class="modal-title h4" id="modalFeature3Label">KI-Agent-Workshop</h2>
         </div>
         <div class="modal-body">
           <p class="mb-3">
-            Sicherheit von der Verschlüsselung bis zur Zugriffskontrolle.
+            KI‑gestützte Agenten entwickeln sich rasant weiter und halten zunehmend Einzug in den Arbeitsalltag. Sie
+            übernehmen wiederkehrende Aufgaben, unterstützen bei komplexen Prozessen und ermöglichen neue Formen der
+            Automatisierung. Gleichzeitig wächst bei vielen Mitarbeitenden der Bedarf, diese Technologien zu verstehen
+            und gezielt nutzen zu können.
           </p>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                  <h3 class="h6">Best Practices</h3>
-                  <ul class="mb-0">
-                    <li>2FA/MFA &amp; SSO-Integration</li>
-                    <li>Rollenbasierte Berechtigungen (RBAC)</li>
-                    <li>Audit-Logs &amp; Compliance-Reports</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                  <h3 class="h6">Technik</h3>
-                  <ul class="mb-0">
-                    <li>Verschlüsselung in Ruhe &amp; in Transit</li>
-                    <li>Regelmäßige Penetrationstests</li>
-                    <li>Isolierte Umgebungen &amp; Backups</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <p class="text-secondary mb-0">
-            Konform mit gängigen Standards (z. B. ISO 27001, OWASP-Praktiken – je nach Implementierung).
+          <p class="mb-3">
+            Um Prozesse und Aufgaben künftig effizienter mithilfe von KI‑Agenten umzusetzen, vermittelt diese Schulung
+            die grundlegenden Funktionsweisen von KI‑Agenten und schafft gleichzeitig Anreize, Optimierungspotenziale
+            im eigenen Arbeitsbereich zu erkennen und gezielt einzusetzen.
           </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden Copilot‑Agenten verständlich und praxisnah näherzubringen,
+            sodass sie künftig weitere Einsatzmöglichkeiten für KI‑gestützte Agenten erkennen und diese gemeinsam
+            umsetzen können.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 5 bis 10 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 2 bis 4 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+            <ul>
+              <li>Theoretischer Einstieg</li>
+              <li>Vorführung</li>
+              <li>Hands-On Runde: Der eigene E-Mail-AI-Assistent</li>
+              <li class="not_sure">Abschließender Test und/oder Vergleich</li>
+            </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Schließen</button>
-          <button type="button" class="btn btn-primary">Sicherheitsrichtlinien</button>
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Coming Soon -->
+  <div class="modal fade" id="modalFeatureComingSoon" tabindex="-1" aria-labelledby="modalFeature3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-l modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeatureComingSoonLabel">Coming soon</h2>
+        </div>
+
       </div>
     </div>
   </div>
