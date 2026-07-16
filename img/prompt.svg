@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60">
+    <!-- Eingabefeld -->
+    <rect x="5" y="10" width="90" height="40" rx="4"
+          fill="none" stroke="black" stroke-width="2"/>
+
+    <!-- Textzeilen -->
+    <line x1="15" y1="22" x2="75" y2="22"
+          stroke="black" stroke-width="2"/>
+    <line x1="15" y1="30" x2="65" y2="30"
+          stroke="black" stroke-width="2"/>
+    <line x1="15" y1="38" x2="55" y2="38"
+          stroke="black" stroke-width="2"/>
+
+    <!-- Cursor -->
+    <line x1="80" y1="18" x2="80" y2="42"
+          stroke="black" stroke-width="2.5"/>
+</svg>

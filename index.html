@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ideen: Fortgeschrittene KI-Schulung</title>
+  <title>Ideen: Fortgeschrittene KI-Schulungen</title>
 
   <!-- Bootstrap CSS (korrekt eingebunden) -->
   <link
@@ -15,14 +15,14 @@
 
   <style>
     :root {
-      --clr-gray: #7e8182;
-      --clr-creme: #f5f0e6;
-      --clr-gold: #d8000d;
+      --clr-green: #BDD4BF;
+      --clr-blue: #BECDEB;
+      --clr-violet: #D4C2E8;
     }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(120deg, var(--clr-gray) 10%, var(--clr-creme) 55%, var(--clr-gold) 100%);
+      background: linear-gradient(155deg, var(--clr-green) 20%, var(--clr-blue) 60%, var(--clr-violet) 100%);
       background-attachment: fixed;
     }
 
@@ -74,6 +74,31 @@
       --bs-modal-width: min(1000px, 95vw);
       --bs-modal-border-radius: 1rem;
      }
+
+    .section-divider{
+      display:flex;
+      align-items:center;
+      margin:2rem 0;
+    }
+
+    .section-divider::before,
+    .section-divider::after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:rgba(0,0,0,0.15);
+    }
+
+    .section-divider span{
+      margin:0 1rem;
+      padding:0.35rem 1rem;
+      border-radius:999px;
+      background:#FF9E8A;
+      color:#7F2D1C;
+      font-size:0.85rem;
+      font-weight:600;
+    }
+
   </style>
 </head>
 <body>
@@ -84,7 +109,7 @@
 
       <!-- Header -->
       <header class="text-center mb-5">
-        <h1 class="display-5 fw-bold">Fortgeschrittene KI-Schulung</h1>
+        <h1 class="display-5 fw-bold">Fortgeschrittene KI-Schulungen</h1>
         <p class="lead mt-3">
           Um den verantwortungsvollen und effizienten Einsatz von KI im Unternehmen zu fördern, werden nachfolgend
           ausgewählte Schulungs- und Weiterbildungsangebote vorgestellt. Sie sollen Mitarbeitende dabei unterstützen,
@@ -100,10 +125,12 @@
 
       <!-- Karten-Grid -->
       <main class="container py-3">
-        <div class="row g-3 mb-3">
+
+        <!-- Reihe 1 -->
+        <div class="row justify-content-center g-3 mb-5">
 
           <!-- Karte 1 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-6">
             <article class="feature-card h-100 p-4"
               role="button"
               tabindex="0"
@@ -112,8 +139,8 @@
               data-bs-target="#modalFeature1">
 
               <div class="d-flex align-items-center gap-3">
-                <div class="feature-icon" aria-hidden="true" style="background: #FEEAFF; padding: 0;">
-                  <img src="img/binoculars.svg" alt="Fernglas" style="width: 40px; height: 40px;">
+                <div class="feature-icon" aria-hidden="true" style="background: #FEEAFF; padding: 40px;">
+                  <img src="img/binoculars.svg" alt="Fernglas" style="width: 50px; height: 50px;">
                 </div>
                 <div>
                   <h2 class="h5 mb-1">KI-Inhalte Erkennen</h2>
@@ -126,7 +153,7 @@
           </div>
 
           <!-- Karte 2 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-6">
             <article class="feature-card h-100 p-4"
               role="button"
               tabindex="0"
@@ -135,8 +162,8 @@
               data-bs-target="#modalFeature2">
 
               <div class="d-flex align-items-center gap-3">
-                <div class="feature-icon" aria-hidden="true" style="background: #DEFACB; padding: 0;">
-                  <img src="img/light_bulb.svg" alt="Fernglas" style="width: 50px; height: 50px;">
+                <div class="feature-icon" aria-hidden="true" style="background: #DEFACB; padding: 40px;">
+                  <img src="img/light_bulb.svg" alt="Glühbirne" style="width: 60px; height: 60px;">
                 </div>
                 <div>
                   <h2 class="h5 mb-1">KI-Kreativ-Workshop</h2>
@@ -148,7 +175,7 @@
           </div>
 
           <!-- Karte 3 -->
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-6 col-lg-6">
             <article class="feature-card h-100 p-4"
               role="button"
               tabindex="0"
@@ -157,8 +184,8 @@
               data-bs-target="#modalFeature3">
 
               <div class="d-flex align-items-center gap-3">
-                <div class="feature-icon" aria-hidden="true" style="background: #E9F6FF; padding: 0;">
-                  <img src="img/ai_agent.svg" alt="Fernglas" style="width: 50px; height: 50px;">
+                <div class="feature-icon" aria-hidden="true" style="background: #E9F6FF; padding: 40px;">
+                  <img src="img/ai_agent.svg" alt="AI Agent" style="width: 60px; height: 60px;">
                 </div>
                 <div>
                   <h2 class="h5 mb-1">KI-Agent-Workshop</h2>
@@ -170,7 +197,283 @@
 
         </div>
 
-        <!-- Karte (+ Reihe) Coming Soon -->
+
+        <div class="section-divider">
+          <span>Neu</span>
+        </div>
+
+
+        <!-- Reihe 2 -->
+        <div class="row g-3 mb-5">
+
+          <!-- Karte 4 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot für Outlook & Teams öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature4">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #DCE6F8; padding: 40px;">
+                  <img src="img/outlook.svg" alt="Outlook" style="width: 60px; height: 60px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot für Outlook & Teams</h2>
+                  <p class="mb-0 text-secondary">Weniger Zeit für E-Mails und Meetings verschwenden.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 5 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot für Word öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature5">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #DCE6F8; padding: 40px;">
+                  <img src="img/word.svg" alt="Word" style="width: 60px; height: 60px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot für Word</h2>
+                  <p class="mb-0 text-secondary">Dokumente schneller erstellen und verbessern.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 6 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot für Excel öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature6">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #D7EFE3; padding: 40px;">
+                  <img src="img/excel.svg" alt="Excel" style="width: 60px; height: 60px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot für Excel</h2>
+                  <p class="mb-0 text-secondary">Daten schneller strukturieren und verstehen.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 7 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot für PowerPoint öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature7">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #F8DDD6; padding: 40px;">
+                  <img src="img/powerpoint.svg" alt="PowerPoint" style="width: 60px; height: 60px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot für PowerPoint</h2>
+                  <p class="mb-0 text-secondary">Von der Idee zur Präsentation.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Reihe 3 -->
+        <div class="row g-3 mb-5">
+
+          <!-- Karte 8 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="KI-Assistent vs. Suchmaschine öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature8">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #DCE8D5; padding: 40px;">
+                  <img src="img/ki_vs_sm.svg" alt="KI vs SM" style="width: 45px; height: 45px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">KI-Assistent vs. Suchmaschine</h2>
+                  <p class="mb-0 text-secondary">Wann verwendet man Copilot/KI und wann nicht.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 9 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Effektiv Prompten mit Copilot öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature9">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #E5DCF2; padding: 40px;">
+                  <img src="img/prompt.svg" alt="Prompt" style="width: 60px; height: 60px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Effektiv Prompten (mit Copilot)</h2>
+                  <p class="mb-0 text-secondary">Wie man bessere Ergebnisse erhält.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 10 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot im Arbeitsalltag öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature10">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #D7ECE8; padding: 40px;">
+                  <img src="img/bag.svg" alt="Aktenkoffer" style="width: 70px; height: 70px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot im Arbeitsalltag</h2>
+                  <p class="mb-0 text-secondary">Die XX wichtigsten Anwendungsfälle für jeden Arbeitstag.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 11 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Der sichere Umgang mit Copilot öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature11">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #EEDFCF; padding: 40px;">
+                  <img src="img/security.svg" alt="Sicherheit" style="width: 55px; height: 55px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Der sichere Umgang mit Copilot</h2>
+                  <p class="mb-0 text-secondary">Datenschutz, Qualität und sichere Anwendung.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Reihe 4 -->
+        <div class="row g-3 mb-5">
+
+          <!-- Karte 12 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot Use Cases nach Fachbereich öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature12">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #DCE3F0; padding: 40px;">
+                  <img src="img/departments.svg" alt="Abteilungen" style="width: 60px; height: 60px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot Use Cases nach Fachbereich</h2>
+                  <p class="mb-0 text-secondary">Spezifische Praxisbeispiele für entsprechende Arbeitsbereiche.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 13 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot-Challenge öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature13">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #F2DCE2; padding: 40px;">
+                  <img src="img/challenge.svg" alt="Challenge" style="width: 50px; height: 50px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot-Challenge</h2>
+                  <p class="mb-0 text-secondary"> In XX Tagen das Arbeiten mit KI lernen/fördern.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 14 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot-Praxiswerkstatt öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature14">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #F3E2D4; padding: 40px;">
+                  <img src="img/workbench.svg" alt="Werkbank" style="width: 55px; height: 55px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot-Praxiswerkstatt</h2>
+                  <p class="mb-0 text-secondary">Eigene Aufgaben mit Copilot lösen.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Karte 15 -->
+          <div class="col-12 col-md-6 col-lg-6">
+            <article class="feature-card h-100 p-4"
+                     role="button"
+                     tabindex="0"
+                     aria-label="Copilot Advanced öffnen"
+                     data-bs-toggle="modal"
+                     data-bs-target="#modalFeature15">
+
+              <div class="d-flex align-items-center gap-4">
+                <div class="feature-icon" aria-hidden="true" style="background: #E5E4E2; padding: 40px;">
+                  <img src="img/advanced.svg" alt="Fortgeschritten" style="width: 50px; height: 50px;">
+                </div>
+                <div>
+                  <h2 class="h5 mb-1">Copilot Advanced</h2>
+                  <p class="mb-0 text-secondary">Fortgeschrittene Techniken für "Power-User".</p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <!-- Karte (+ Reihe) Coming Soon
         <div class="row g-3">
 
           <div>
@@ -190,7 +493,7 @@
             </article>
           </div>
 
-        </div>
+        </div>-->
 
         <p class="text-center text-secondary mt-4 mb-0">
           Alle Rechte vorbehalten ©
@@ -343,7 +646,573 @@
     </div>
   </div>
 
-  <!-- Modal Coming Soon -->
+  <!-- Modal 4 -->
+  <div class="modal fade" id="modalFeature4" tabindex="-1" aria-labelledby="modalFeature4Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature4Label">Copilot für Outlook & Teams</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Microsoft Copilot unterstützt Mitarbeitende dabei, wiederkehrende Aufgaben effizienter zu erledigen und
+            Arbeitsprozesse direkt in den Microsoft 365-Anwendungen zu vereinfachen. Von der Erstellung von Inhalten
+            über die Aufbereitung von Informationen bis hin zur Analyse von Dokumenten bietet Copilot vielfältige
+            Einsatzmöglichkeiten im Arbeitsalltag.
+          </p>
+          <p class="mb-3">
+            Diese Schulung gibt einen praxisnahen Überblick über die Funktionen und Einsatzmöglichkeiten von Microsoft
+            Copilot innerhalb der jeweiligen Anwendung und zeigt, wie diese sinnvoll im Arbeitsalltag genutzt werden
+            können.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden den Gebrauch von Copilot während der Nutzung von Microsoft
+            Outlook und Teams näherzubringen. Dabei soll gezeigt werden wie man E-Mails mithilfe von Copilot
+            schreiben, verbessern und zusammenfassen lassen kann. Auch soll den Teilnehmenden beigebracht werden wie
+            sie Copilot nutzen können, um eine Agenda zu erstellen, Termine zu strukturieren, Meetings nachzubereiten
+            und Aufgaben abzuleiten.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 10 bis 15 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 1 bis 3 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Kurzer Theorie-Teil mit Praxis-Beispielen</li>
+            <li>Kreative "Workshop-Runde"</li>
+            <li>Ergebnisse Vergleichen</li>
+            <li class="not_sure">Follow-up Termin: Erfahrungen Vergleichen</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div class="modal fade" id="modalFeature5" tabindex="-1" aria-labelledby="modalFeature5Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature5Label">Copilot für Word</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Microsoft Copilot unterstützt Mitarbeitende dabei, wiederkehrende Aufgaben effizienter zu erledigen und
+            Arbeitsprozesse direkt in den Microsoft 365-Anwendungen zu vereinfachen. Von der Erstellung von Inhalten
+            über die Aufbereitung von Informationen bis hin zur Analyse von Dokumenten bietet Copilot vielfältige
+            Einsatzmöglichkeiten im Arbeitsalltag.
+          </p>
+          <p class="mb-3">
+            Diese Schulung gibt einen praxisnahen Überblick über die Funktionen und Einsatzmöglichkeiten von Microsoft
+            Copilot innerhalb der jeweiligen Anwendung und zeigt, wie diese sinnvoll im Arbeitsalltag genutzt werden
+            können.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden den Einsatz von Copilot in Microsoft Word näherzubringen.
+            Dabei soll gezeigt werden, wie die Teilnehmenden Copilot nutzen können, um Word-Dokumente zu strukturieren,
+            zu verbessern, zu überprüfen und das Layout anzupassen.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 10 bis 15 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 1 bis 2 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Kurzer Theorie-Teil mit Praxis-Beispielen</li>
+            <li>Kreative "Workshop-Runde"</li>
+            <li>Ergebnisse Vergleichen</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div class="modal fade" id="modalFeature6" tabindex="-1" aria-labelledby="modalFeature6Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature6Label">Copilot für Excel</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Microsoft Copilot unterstützt Mitarbeitende dabei, wiederkehrende Aufgaben effizienter zu erledigen und
+            Arbeitsprozesse direkt in den Microsoft 365-Anwendungen zu vereinfachen. Von der Erstellung von Inhalten
+            über die Aufbereitung von Informationen bis hin zur Analyse von Dokumenten bietet Copilot vielfältige
+            Einsatzmöglichkeiten im Arbeitsalltag.
+          </p>
+          <p class="mb-3">
+            Diese Schulung gibt einen praxisnahen Überblick über die Funktionen und Einsatzmöglichkeiten von Microsoft
+            Copilot innerhalb der jeweiligen Anwendung und zeigt, wie diese sinnvoll im Arbeitsalltag genutzt werden
+            können.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden zu vermitteln wie sie Copilot während der Nutzung von Microsoft
+            Excel unterstützend anwenden können, um bestimmte Daten zu Suchen, die richtigen Formeln zu verwenden, die
+            Daten zu strukturieren und simple aber aussagekräftige Excel-Sheets zu erstellen.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 10 bis 15 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 1 bis 2 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Kurzer Theorie-Teil mit Praxis-Beispielen</li>
+            <li>Kreative "Workshop-Runde" oder "Challenge-Runde"</li>
+            <li>Ergebnisse Vergleichen</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div class="modal fade" id="modalFeature7" tabindex="-1" aria-labelledby="modalFeature7Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature7Label">Copilot für PowerPoint</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Microsoft Copilot unterstützt Mitarbeitende dabei, wiederkehrende Aufgaben effizienter zu erledigen und
+            Arbeitsprozesse direkt in den Microsoft 365-Anwendungen zu vereinfachen. Von der Erstellung von Inhalten
+            über die Aufbereitung von Informationen bis hin zur Analyse von Dokumenten bietet Copilot vielfältige
+            Einsatzmöglichkeiten im Arbeitsalltag.
+          </p>
+          <p class="mb-3">
+            Diese Schulung gibt einen praxisnahen Überblick über die Funktionen und Einsatzmöglichkeiten von Microsoft
+            Copilot innerhalb der jeweiligen Anwendung und zeigt, wie diese sinnvoll im Arbeitsalltag genutzt werden
+            können.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden zu zeigen, wie sie Copilot nutzen können, um
+            PowerPoint-Präsentationen zu erstellen, zu verbessern und professionell zu gestalten.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 10 bis 15 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 1 bis 2 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Kurzer Theorie-Teil mit Praxis-Beispielen</li>
+            <li>Kreative "Workshop-Runde"</li>
+            <li>Ergebnisse Vorstellen und Vergleichen</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div class="modal fade" id="modalFeature8" tabindex="-1" aria-labelledby="modalFeature8Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature8Label">KI-Assistent vs. Suchmaschine</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            KI-gestützte Assistenten verändern die Art, wie Informationen recherchiert und verarbeitet werden. Sie
+            liefern nicht nur Suchergebnisse, sondern unterstützen beim Zusammenfassen, Strukturieren und Beantworten
+            konkreter Fragestellungen. Gleichzeitig ist es wichtig zu wissen, wann der Einsatz eines KI-Assistenten
+            sinnvoll ist und wann eine klassische Internetsuche die bessere Wahl bleibt.
+          </p>
+          <p class="mb-3">
+            Diese Schulung vermittelt die Unterschiede zwischen Suchmaschinen und KI-Assistenten anhand praxisnaher
+            Beispiele. Die Teilnehmenden lernen, beide Werkzeuge gezielt einzusetzen und den größtmöglichen Nutzen
+            für ihren Arbeitsalltag zu erzielen.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden zu vermitteln, bei welchen Aufgaben bzw. in welchen
+            Situationen sie den KI-Assistenten oder eine Suchmaschine einsetzen können. Dadurch sollen sie ein
+            Gespür für die richtige Nutzung dieser Werkzeuge entwickeln und zukünftig effizienter sowie
+            zielgerichteter damit arbeiten.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 10 bis 20 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 1 bis 2 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Theorie-Teil</li>
+            <li>Gemeinsame Erörterung</li>
+            <li class="not_sure">Aufgabenrunde/Workshop</li>
+            <li class="not_sure">Ergebnisvergleich</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 -->
+  <div class="modal fade" id="modalFeature9" tabindex="-1" aria-labelledby="modalFeature9Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature9Label">Effektiv Prompten (mit Copilot)</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Copilot kann viele Aufgaben im Arbeitsalltag unterstützen - die Qualität der Ergebnisse hängt jedoch
+            maßgeblich davon ab, wie Anfragen formuliert werden. Durch klare und zielgerichtete Eingaben lässt sich
+            das Potenzial von Copilot besser ausschöpfen und die Zusammenarbeit mit der KI deutlich effizienter
+            gestalten.
+          </p>
+          <p class="mb-3">
+            Um langfristig effizient und qualitativ hochwertige Ergebnisse zu erhalten, soll mit dieser Schulung
+            vermittelt werden, wie die Teilnehmer wirkungsvolle Prompts erstellen, Copilot gezielt steuern und, durch
+            praxisnahe Beispiele, bessere und präzisere Ergebnisse für ihren Arbeitsalltag erzielen.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden den richtigen Aufbau von Prompts zu vermitteln und weitere
+            mögliche Technicken beim prompten aufzuzeigen, damit zukünftig schneller bessere Ergebnisse erhalten werden.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 10 bis 15 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 1 bis 2 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Kurzer Theorie-Teil</li>
+            <li>Vorführung</li>
+            <li class="not_sure">Hands-On Teil</li>
+            <li>Key Takeaways</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 -->
+  <div class="modal fade" id="modalFeature10" tabindex="-1" aria-labelledby="modalFeature10Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature10Label">Copilot im Arbeitsalltag</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Microsoft Copilot unterstützt dabei, wiederkehrende Aufgaben im Arbeitsalltag effizienter zu erledigen.
+            Ob E-Mails erstellen, Informationen zusammenfassen oder Dokumente erarbeiten – Copilot bietet vielfältige
+            Einsatzmöglichkeiten und kann Mitarbeitende bei täglichen Aufgaben gezielt unterstützen.
+          </p>
+          <p class="mb-3">
+            Damit dies auch von den Mitarbeitern aktiv umgesetzt wird, soll diese Schulung einen praxisnahen Überblick
+            über typische Anwendungsfälle von Microsoft Copilot geben und zeigen, wie die Funktionen sinnvoll in den
+            Arbeitsalltag integriert werden können.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden zu vermitteln wie sie Microsoft Copilot aktiv für die
+            Bewältigung ihres Arbeitsaltages einsetzen können.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 5 bis 10 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 2 bis 3 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Theorie-Teil (Auffrischung)</li>
+            <li class="not_sure">Interaktive Ideensammlung / Kreativer Austausch</li>
+            <li>"Workshop-Runde"</li>
+            <li>Lessons Learned</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 11 -->
+  <div class="modal fade" id="modalFeature11" tabindex="-1" aria-labelledby="modalFeature11Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature11Label">Der sichere Umgang mit Copilot</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Microsoft Copilot kann den Arbeitsalltag in vielen Bereichen unterstützen. Gleichzeitig ist ein bewusster
+            und verantwortungsvoller Umgang mit KI wichtig, um Datenschutz, Informationssicherheit und die Qualität
+            der Ergebnisse sicherzustellen. Der sichere Einsatz von Copilot trägt dazu bei, Chancen sinnvoll zu nutzen
+            und Risiken zu minimieren.
+          </p>
+          <p class="mb-3">
+            Diese Schulung soll einen Überblick über den sicheren und verantwortungsvollen Einsatz von Microsoft
+            Copilot vermitteln und wichtige Aspekte im Umgang mit sensiblen Daten und KI-generierten Inhalten aufzeigen,
+            damit ein sicherer und verantwortungsbewusster Umgang mit KI/Copilot gewährleistet werden kann.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmern einen sicheren Umgang mit Copilot zu vermitteln, damit
+            gewährleistet werden kann, dass keine unnötigen Sicherheitsrisiken entstehen/bestehen.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 10 bis 15 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 1 bis 1,5 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Theorie-Teil</li>
+            <li>Gemeinsame Beispielanalyse</li>
+            <li>Key Takeaways</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 12 -->
+  <div class="modal fade" id="modalFeature12" tabindex="-1" aria-labelledby="modalFeature12Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature12Label">Copilot Use Cases nach Fachbereich</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Die Einsatzmöglichkeiten von Microsoft Copilot unterscheiden sich je nach Fachbereich und Arbeitsalltag.
+            Anhand praxisnaher Beispiele wird deutlich, wie Copilot unterschiedliche Aufgaben gezielt unterstützen und
+            Arbeitsabläufe erleichtern kann.
+          </p>
+          <p class="mb-3">
+            Um den Fachbereichen den gezielten Einsatz von Copilot näherzubringen, soll diese Schulung gibt einen
+            Überblick über typische Anwendungsfälle in verschiedenen Abteilungen geben und den praktischen Nutzen
+            von Microsoft Copilot im Arbeitsalltag aufzeigen.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden die auf ihren Fachbereich bezogene Anwendung von Copilot
+            aufzuzeigen und zu fördern, damit zukünftig eine effiziente Nutzung von Copilot vorhanden ist.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 6 bis 8 Personen einer Abteilung.</p>
+          <p class="mb-1"><strong>Dauer:</strong> 2 bis 4 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Kurzer Theorie-Teil</li>
+            <li class="not_sure">Gemeinsamer Diskurs</li>
+            <li>Lösungsfindung</li>
+            <li>Key Takeaways / Lessons Learned / Prozessablauf entwickeln</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 13 -->
+  <div class="modal fade" id="modalFeature13" tabindex="-1" aria-labelledby="modalFeature13Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature13Label">Copilot-Challenge</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Der nachhaltige Einsatz von Microsoft Copilot entsteht durch regelmäßiges Ausprobieren und Anwenden im
+            Arbeitsalltag. Praxisnahe Aufgaben helfen dabei, neue Einsatzmöglichkeiten zu entdecken und den Mehrwert
+            von Copilot besser kennenzulernen.
+          </p>
+          <p class="mb-3">
+            Damit bei den Mitarbeitern die angemessene Verwendung von Copilot gewährleistet werden kann, soll diese
+            Schulung den regelmäßigen und praxisorientierten Einsatz von Microsoft Copilot im Arbeitsalltag fördern.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, die Teilnehmenden durch regelmäßige Aufgaben an die Nutzung von Copilot
+            heranzuführen. Dadurch sollen die Akzeptanz von KI erhöht und die Teilnehmenden dazu befähigt werden,
+            KI künftig aktiv in ihrem Arbeitsalltag einzusetzen.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 5 bis 10 Personen.</p>
+          <p class="mb-1"><strong>Dauer:</strong> Kickoff Termin: 1 bis 2 Stunden; Challenge-Days: 15 bis 30 Tage.</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li>Kurzer Theorie-Teil</li>
+            <li>Während der Challenge-Days: Wöchentliche Aufgaben/Challenges</li>
+            <li class="not_sure">Wöchentliche Meetings: Lessons learned</li>
+            <li>Abschließender Termin: Key Takeaways (& Leaderboard)</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 14 -->
+  <div class="modal fade" id="modalFeature14" tabindex="-1" aria-labelledby="modalFeature14Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature14Label">Copilot-Praxiswerkstatt</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Microsoft Copilot entfaltet seinen größten Mehrwert, wenn es direkt bei den täglichen Aufgaben eingesetzt
+            wird. Anhand praxisnaher Beispiele und realer Arbeitssituationen lassen sich Funktionen gezielt
+            ausprobieren und auf den eigenen Arbeitsalltag übertragen.
+          </p>
+          <p class="mb-3">
+            Um jedoch gewährleisten zu können, dass Mitarbeiter Copilot effizienzfördern in ihrem Arbeitsalltag
+            einsetzen, soll diese Schulung die Möglichkeit bieten, typische Aufgaben mit Microsoft Copilot praxisnah
+            und unter anleitung zu bearbeiten und verschiedene Einsatzmöglichkeiten kennenzulernen.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, die Teilnehmenden anhand von eigens mitgebrachten Aufgaben and die Verwendung von
+            Copilot heranführen, damit auch im zukünftigem Arbeitsalltag Copilot zur Problem- und Aufgabenbewältigung
+            effizient eingesetzt wird.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 4 bis 6 Personen (am besten aus ähnlichen Bereichen).</p>
+          <p class="mb-1"><strong>Dauer:</strong> 3 bis 5 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kickoff-Termin: Anforderungen klären</li>
+            <li>Kurzer Einstieg</li>
+            <li>Use-Cases besprechen</li>
+            <li>Workshop-Runde(-n)</li>
+            <li>Ideen-/Lösungspräsentation: Wie will ich vorgehen / Wie bin ich vorgegangen</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 15 -->
+  <div class="modal fade" id="modalFeature15" tabindex="-1" aria-labelledby="modalFeature15Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modalFeature15Label">Copilot Advanced</h2>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">
+            Mit zunehmender Erfahrung eröffnen sich weitere Möglichkeiten, Microsoft Copilot gezielt für komplexere
+            Aufgaben und Arbeitsabläufe einzusetzen. Durch den erweiterten Funktionsumfang lassen sich Prozesse
+            effizienter gestalten und verschiedene Anwendungen noch besser miteinander kombinieren.
+          </p>
+          <p class="mb-3">
+            Damit es sogenannte "Power-User" geben kann, soll diese Schulung einen Überblick über die fortgeschrittene
+            Funktionen und Einsatzmöglichkeiten von Microsoft Copilot geben und anhand praxisnaher Beispiele deren
+            Anwendung im Arbeitsalltag aufzeigen.
+          </p>
+          <hr>
+          <p class="mb-1">
+            <strong>Ziel:</strong>
+          </p>
+          <p class="mb-3">
+            Ziel der Schulung ist es, den Teilnehmenden den Umgang mit Copilot zu vertiefen und ihnen weitere
+            Anwendungsmöglichkeiten sowie Techniken für den effektiven Einsatz zu vermitteln.
+          </p>
+          <p class="mb-1"><strong>Teilnehmer:</strong> 5 bis 10 Personen (Diese müssen KI-Affin sein bzw. eine
+            effiziente Nutzung vorweisen).</p>
+          <p class="mb-1"><strong>Dauer:</strong> 2 bis 4 Stunden (je nach Aufbau).</p>
+          <p class="mb-0"><strong>Elemente:</strong></p>
+          <ul>
+            <li>Kurzer Einstieg</li>
+            <li class="not_sure">Theorie-Auffrischung</li>
+            <li>Tiefgreifende Theorie-Erweiterung</li>
+            <li>Praxisbeispiele</li>
+            <li>"Workshop-Runde(-n)"</li>
+            <li class="not_sure">Gemeinsamer Diskurs</li>
+            <li>Key Takeaways</li>
+          </ul>
+          <hr>
+          <p class="mb-0 text-secondary hint">Hinweis: Änderungs- bzw. Verbesserungswünsche sind jederzeit Willkommen.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--&lt;!&ndash; Modal Coming Soon &ndash;&gt;
   <div class="modal fade" id="modalFeatureComingSoon" tabindex="-1" aria-labelledby="modalFeature3Label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-l modal-dialog-scrollable">
       <div class="modal-content">
@@ -354,7 +1223,7 @@
 
       </div>
     </div>
-  </div>
+  </div>-->
 
   <!-- Bootstrap Bundle JS (korrekt eingebunden) -->
   <script
@@ -381,4 +1250,3 @@
   </script>
 </body>
 </html>
-``
